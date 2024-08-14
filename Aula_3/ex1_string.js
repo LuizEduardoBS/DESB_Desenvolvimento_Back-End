@@ -19,8 +19,8 @@ console.log(cifrao);
 console.log(aMaiusculo);
 console.log(tique);
 console.log(hierarquia);
-
-
+console.log(stexto.length); // .length retorna o tamanho da string
+console.log(texto.length);
 
 
 
