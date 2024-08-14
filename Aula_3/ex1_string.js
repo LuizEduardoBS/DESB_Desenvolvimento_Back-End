@@ -5,8 +5,23 @@ let stexto = `nome ${estudante} numero ${num}.`; // Template String
 
 console.log(stexto);
 
-console.log(`A variavel "estudante" com valor "${estudante}" é do tipo:`, typeof(estudante));
-console.log(`A variavel "num" com valor "${num}" é do tipo:`, typeof(num));
-console.log(`A variavel "texto" com valor "${texto}" é do tipo:`, typeof(texto));
-console.log(`A variavel "stexto" com valor "${stexto}" é do tipo:`, typeof(stexto));
+
+const cifrao = '\u0024'; // Simbolo utilizando codigo UTF
+const aMaiusculo = '\u0041'; // Simbolo utilizando codigo UTF
+const tique = '\u2705'; // Simbolo utilizando codigo UTF
+const hierarquia = '\u3041'; // Simbolo utilizando codigo UTF
+let tel_estudante = null; // Variavel com valor vazio
+let cpf = undefined; // Variavel com valor indefinido
+
+console.log(cpf);
+console.log(tel_estudante);
+console.log(cifrao);
+console.log(aMaiusculo);
+console.log(tique);
+console.log(hierarquia);
+
+
+
+
+
 
