@@ -7,6 +7,7 @@ git status = verifica o status atual do repositório, incluindo arquivos modific
 git log = ver histórico de commits.
 git checkout = usado para alterar entre branches ou mudar para uma versão anterior do código em um branch existente.
 git checkout -b = cria uma nova branch e navega para ela.
+git checkout <commit> -b <nome da branch> = cria uma branch a partir de um commit específico.
 git branch = lista as branches do projeto.
 git branch -d = Exclui a branch
 git merge = você deve estar na principal. Permite unir o conteúdo de duas ou mais branches em uma única branch. É usado para integrar alterações feitas em uma branch secundária(geralmente uma branch de desenvolvimento) na branch principal(geralmente a branch master).
