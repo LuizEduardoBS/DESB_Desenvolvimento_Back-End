@@ -5,12 +5,12 @@ class Fruta {
         this.cor = "Verde";
         this.peso = 400;
         this.diasdecolheita = 5;
-        this.isMadura = null/ // O atributo pode ser opcional, inicializado com null
+        this.isMadura = null // O atributo pode ser opcional, inicializado com null
     }
 
     // Cria o método
-    isMadura(diasParaMadura){
-        f (diasParaMadura >= this.diasdecolheita) {
+    madura(diasParaMadura){
+        if (diasParaMadura >= this.diasdecolheita) {
             console.log(`A ${this.nome} está madura.`);
         } else {
             console.log(`A ${this.nome} não está madura.`);
@@ -19,4 +19,4 @@ class Fruta {
 }
 
 const tangerina = new Fruta();
-tangerina.isMadura(6);
+tangerina.madura(6);
