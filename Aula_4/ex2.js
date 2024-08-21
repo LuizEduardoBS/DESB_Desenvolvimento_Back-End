@@ -29,3 +29,5 @@ Usuario1.senha = "123456";
 Usuario1.cpf = "123.123.123.00";
 Usuario1.celular = "(19)91111-2222";
 Usuario1.exibir_info();
+Usuario1.verificar_login("Luiz","123456");
+Usuario1.verificar_login("Luiz","123");
