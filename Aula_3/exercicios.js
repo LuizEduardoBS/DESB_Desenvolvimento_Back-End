@@ -148,7 +148,95 @@ if (idadeUsuario >= 18) {
     console.log(`O usuário NÂO PODE comprar o ingresso.`);
 }
 
+console.log('////////////////////////////////////////////////////////////');
 
+//EXERCÍCIO 11
 
+console.log("EXERCÍCIO 11");
 
+const nome = 'Luiz';
 
+function saudacao(nome1) {
+    let pessoa = nome1;
+    console.log(`Olá ${pessoa}, como você está?`);
+}
+
+saudacao(nome);
+
+console.log('////////////////////////////////////////////////////////////');
+
+//EXERCÍCIO 12
+
+console.log("EXERCÍCIO 12");
+
+let idade = 19;
+
+function verificacao_idade(valor_idade) {
+    let valor_ = valor_idade;
+    if (valor_>=18){
+        console.log(`A pessoa tem ${valor_} anos, portanto ela é MAIOR de idade.`)
+    } else {
+        console.log(`A pessoa tem ${valor_} anos, portanto ela é MENOR de idade.`)
+    }
+}
+
+verificacao_idade(idade);
+
+console.log('////////////////////////////////////////////////////////////');
+
+//EXERCÍCIO 13
+
+console.log("EXERCÍCIO 13");
+
+const palavra_1 = 'rotor';
+const palavra_2 = 'novo';
+
+function verificar_palindromo(string){
+    const palavra_invertida = string.split('').reverse().join('');
+    if (string === palavra_invertida) {
+        console.log(`A palavra ${string} é um palíndromo.`);
+    } else {
+        console.log(`A palavra ${string} NÃO é um palíndromo.`);
+    }
+}
+
+console.log(verificar_palindromo(palavra_1));
+console.log(verificar_palindromo(palavra_2));
+
+console.log('////////////////////////////////////////////////////////////');
+
+//EXERCÍCIO 14
+
+console.log("EXERCÍCIO 14");
+
+const valor_1 = 180, valor_2 = 26, valor_3 = 30;
+
+function verifica_numeros(val1, val2, val3) {
+    if (val1 > val2 && val1 > val3) {
+        console.log(`O maior valor entre os três é ${val1}.`)
+    } else if (val2 > val1 && val2 > val3) {
+        console.log(`O maior valor entre os três é ${val2}.`)
+    } else if (val3 > val1 && val3 > val2) {
+        console.log(`O maior valor entre os três é ${val3}.`)
+    } else if (val1 === val2 && val2 === val3) {
+        console.log(`Os três valores são iguais: ${val1}, ${val2},  ${val3}.`)
+    }
+}
+
+verifica_numeros(valor_1, valor_2, valor_3);
+
+console.log('////////////////////////////////////////////////////////////');
+
+//EXERCÍCIO 15
+
+console.log("EXERCÍCIO 15");
+
+const base = 3;
+const expoente = 3;
+
+function calculaPotencia (B, Exp) {
+    let resultado = B**Exp;
+    console.log(`${base} elevado a ${Exp} é igual a: ${resultado}.`);
+}
+
+calculaPotencia(base, expoente);
