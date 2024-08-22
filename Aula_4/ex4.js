@@ -14,7 +14,8 @@ class Animal {
   class Cachorro extends Animal {
     constructor() {
         // Chama o construtor da classe base
-                
+        super();
+        this.raca = null;
     }
     // Método sobrescrito
     fazerSom() {
@@ -28,6 +29,6 @@ class Animal {
   const Rocky = new Cachorro();
   Rocky.nome = "Rocky";
   Rocky.idade = "2";
-  Rocky.raca =
+  Rocky.raca = "Labrador";
   Rocky.exibirInfo();
 
