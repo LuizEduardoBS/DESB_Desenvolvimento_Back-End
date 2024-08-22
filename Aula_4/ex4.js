@@ -12,9 +12,9 @@ class Animal {
   // extends herança, a classe cachorro herda da classe animal algumas 
   // características como nome e idade
   class Cachorro extends Animal {
-    constructor(nome, idade, raca) {
-      // Chama o construtor da classe base
-     
+    constructor() {
+        // Chama o construtor da classe base
+                
     }
     // Método sobrescrito
     fazerSom() {
@@ -28,5 +28,6 @@ class Animal {
   const Rocky = new Cachorro();
   Rocky.nome = "Rocky";
   Rocky.idade = "2";
+  Rocky.raca =
   Rocky.exibirInfo();
 
