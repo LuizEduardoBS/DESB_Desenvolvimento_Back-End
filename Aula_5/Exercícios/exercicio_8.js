@@ -8,11 +8,11 @@ const livro = {
   avaliacao: null,
 
   avaliar() {
-    if (this.avaliacao === null) {
+    if (this.avaliacao === true) {
+      console.log('O livro já possui uma avaliação');
+    } else {
       this.avaliacao = 'Muito bom - 5 estrelas';
       console.log(`Avaliação: ${livro.avaliacao}`);
-    } else {
-      console.log('O livro já possui uma avaliação');
     }
   }
 }
