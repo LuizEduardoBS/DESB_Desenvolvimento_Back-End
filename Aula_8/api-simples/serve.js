@@ -25,6 +25,7 @@ app.get('/data', (req, res) => {
     // Parse para leitura dos dados
     const { nome, idade } = req.body;
     res.send(`Nome: ${nome}, Idade: ${idade}`);
+    res.json(dados) // Armazena a resposta
 })
 
 
