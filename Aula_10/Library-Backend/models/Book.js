@@ -7,5 +7,11 @@ const BookSchema = new mongoose.Schema({
     year: { type: Number },
 })
 
+const UserSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    senha: { type: String, required: true },
+})
+
 // Exportando o modelo
 module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('User', UserSchema);

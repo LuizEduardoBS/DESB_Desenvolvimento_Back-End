@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conexão ao MongoDB
-mongoose.connect('mongodb+srv://luized:Luiz123@cluster0.u7srm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://luized:Luiz123@cluster0.u7srm.mongodb.net/library', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -18,6 +18,9 @@ mongoose.connect('mongodb+srv://luized:Luiz123@cluster0.u7srm.mongodb.net/?retry
 //Importação das rotas
 const booksRoutes = require('./routes/books');
 app.use('/api/books', booksRoutes);
+
+const usersRoutes = require('./routes/users');
+app.use('/api/users', usersRoutes);
 
 // Definir a porta do servidor
 app.listen(3000, () => {
