@@ -2,10 +2,6 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Middleware to parse URL-encoded bodies (optional, but useful for form submissions)
-//app.use(express.urlencoded({ extended: true }));
-
-// Your routes here
 
 // Função para registrar novos usuários
 exports.register = async (req, res) => {

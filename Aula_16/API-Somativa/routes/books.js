@@ -48,6 +48,36 @@ router.get('/', async (req, res) => {
     }
 });
 
+// BUSCAR LIVRO PELO ID, TITLE OU AUTHOR
+router.get('/:searchParam', async (req, res) => {
+    try {
+        const { searchParam } = req.params; // Obtém o parâmetro de busca
+        let book;
+
+        // Verifica se o parâmetro é um ID válido (se for um ObjectId do MongoDB)
+        if (mongoose.Types.ObjectId.isValid(searchParam)) {
+            // Se for um ID válido, buscar por ID
+            book = await Book.findById(searchParam);
+        } else {
+            // Caso contrário, busca por título ou autor
+            book = await Book.findOne({
+                $or: [
+                    { title: { $regex: searchParam, $options: 'i' } }, // Busca por título (case insensitive)
+                    { author: { $regex: searchParam, $options: 'i' } } // Busca por autor (case insensitive)
+                ]
+            });
+        }
+
+        if (!book) {
+            return res.status(404).json({ message: 'Livro não encontrado' });
+        }
+
+        res.status(200).json(book);
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao buscar livro', error });
+    }
+});
+
 // *** ATUALIZAÇÃO (PUT) ***
 router.put('/:id', upload.single('image'), async (req, res) => {
     try {
