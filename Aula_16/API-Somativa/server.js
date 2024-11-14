@@ -1,8 +1,14 @@
+require('dotenv').config();
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParse = require('body-parser');
 const books = require('./routes/books');
+const authRoutes = require('./routes/authRoutes');
+
 const path = require('path');
+
 
 const app = express();
 
@@ -20,6 +26,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Rotas
 app.use('/api/books', books);
+
+app.use('/api/auth', authRoutes);
 
 // Inicia o servidor
 const PORT = 3000;
