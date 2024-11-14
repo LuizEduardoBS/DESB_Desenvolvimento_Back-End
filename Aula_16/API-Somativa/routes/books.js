@@ -4,6 +4,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');  // Importa o path
 const fs = require('fs');      // Importa o fs
+const mongoose = require('mongoose');
 
 // Configuração do Multer para upload de imagens
 const storage = multer.diskStorage({
@@ -52,15 +53,16 @@ router.get('/', async (req, res) => {
 router.get('/:searchParam', async (req, res) => {
     try {
         const { searchParam } = req.params; // Obtém o parâmetro de busca
-        let book;
+
+        let books;
 
         // Verifica se o parâmetro é um ID válido (se for um ObjectId do MongoDB)
         if (mongoose.Types.ObjectId.isValid(searchParam)) {
             // Se for um ID válido, buscar por ID
-            book = await Book.findById(searchParam);
+            books = await Book.find({ _id: searchParam });
         } else {
             // Caso contrário, busca por título ou autor
-            book = await Book.findOne({
+            books = await Book.find({
                 $or: [
                     { title: { $regex: searchParam, $options: 'i' } }, // Busca por título (case insensitive)
                     { author: { $regex: searchParam, $options: 'i' } } // Busca por autor (case insensitive)
@@ -68,15 +70,18 @@ router.get('/:searchParam', async (req, res) => {
             });
         }
 
-        if (!book) {
-            return res.status(404).json({ message: 'Livro não encontrado' });
+        if (!books.length) {
+            return res.status(404).json({ message: 'Nenhum livro encontrado' });
         }
 
-        res.status(200).json(book);
+        res.status(200).json(books);
     } catch (error) {
-        res.status(500).json({ message: 'Erro ao buscar livro', error });
+        console.error("Erro ao buscar livros:", error); // Log do erro detalhado
+        res.status(500).json({ message: 'Erro ao buscar livros', error: error.message });
     }
 });
+
+
 
 // *** ATUALIZAÇÃO (PUT) ***
 router.put('/:id', upload.single('image'), async (req, res) => {
